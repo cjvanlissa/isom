@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Demo for ISOM"
 output: github_document
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 bibliography: references.bib
@@ -12,7 +12,7 @@ library("worcs")
 # and end that file with either open_data(yourdata), or closed_data(yourdata).
 # Then, uncomment the line below to load the original or synthetic data
 # (whichever is available), to allow anyone to reproduce your code:
-# load_data()
+load_data()
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -32,7 +32,7 @@ This is an R Markdown format used for publishing markdown documents to GitHub. W
 You can include R code in the document as follows:
 
 ```{r cars}
-summary(cars)
+res <- lm(bill_length_mm ~  flipper_length_mm + body_mass_g, data = df)
 ```
 
 ## Including Plots
@@ -40,7 +40,14 @@ summary(cars)
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+plot(res, which = 1)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+tab <- summary(res)$coefficients
+write.csv(tab, "tab.csv")
+tab <- read.csv("tab.csv")
+knitr::kable(tab)
+```

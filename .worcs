@@ -12,3 +12,8 @@ data:
     labels: value_labels_df.yml
 checksums:
   df.csv: 948d0bf337a12027c2b02516befca3ca
+  tab.csv: 91acc6c7ac955c791e5be5c3a6fba886
+  manuscript/manuscript.md: 1aced4c5a31df8fdca958008f6d3ce17
+endpoints:
+- tab.csv
+- manuscript/manuscript.md

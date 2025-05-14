@@ -4,6 +4,8 @@
 
 <!-- badges: start -->
 
+[![worcs_endpoints](https://github.com/cjvanlissa/isom/actions/workflows/worcs_endpoints.yaml/badge.svg)](https://github.com/cjvanlissa/isom/actions/workflows/worcs_endpoints.yaml)
+[![Codecov test coverage](https://codecov.io/gh/cjvanlissa/isom/graph/badge.svg)](https://app.codecov.io/gh/cjvanlissa/isom)
 <!-- badges: end -->
 
 <!-- Please add a brief introduction to explain what the project is about    -->
