@@ -602,7 +602,7 @@ padding-top: 0px;
 <body>
 
 <h1 id="demo-for-isom">Demo for ISOM</h1>
-<p>14 May, 2025</p>
+<p>15 May, 2025</p>
 <p>This manuscript uses the Workflow for Open Reproducible Code in
 Science (Van Lissa et al. 2021) to ensure reproducibility and
 transparency. All code <!--and data--> are available at <isom>.</p>
@@ -625,41 +625,55 @@ GitHub is generated.</p>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the
 code chunk to prevent printing of the R code that generated the
 plot.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">summary</span>(res)<span class="sc">$</span>coefficients</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">write.csv</span>(tab, <span class="st">&quot;tab.csv&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;tab.csv&quot;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tab)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">c =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="fu">write.csv</span>(tab, <span class="st">&quot;tab.csv&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">print</span>(worcs<span class="sc">:::</span><span class="fu">cs_fun</span>(<span class="st">&quot;tab.csv&quot;</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;c83bed0414877b2359697fbf2af5c89d&quot;</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;tab.csv&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tab)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
-<th align="left">X</th>
-<th align="right">Estimate</th>
-<th align="right">Std..Error</th>
-<th align="right">t.value</th>
-<th align="right">Pr…t..</th>
+<th align="right">X</th>
+<th align="right">a</th>
+<th align="right">b</th>
+<th align="left">c</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">(Intercept)</td>
-<td align="right">-3.4366939</td>
-<td align="right">4.5805532</td>
-<td align="right">-0.7502792</td>
-<td align="right">0.4536070</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="left">a</td>
 </tr>
 <tr class="even">
-<td align="left">flipper_length_mm</td>
-<td align="right">0.2218655</td>
-<td align="right">0.0323484</td>
-<td align="right">6.8586119</td>
-<td align="right">0.0000000</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">7</td>
+<td align="left">b</td>
 </tr>
 <tr class="odd">
-<td align="left">body_mass_g</td>
-<td align="right">0.0006622</td>
-<td align="right">0.0005672</td>
-<td align="right">1.1675067</td>
-<td align="right">0.2438263</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="left">c</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">9</td>
+<td align="left">d</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">5</td>
+<td align="right">10</td>
+<td align="left">e</td>
 </tr>
 </tbody>
 </table>

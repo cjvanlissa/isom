@@ -1,6 +1,6 @@
 Demo for ISOM
 ================
-14 May, 2025
+15 May, 2025
 
 This manuscript uses the Workflow for Open Reproducible Code in Science
 (Van Lissa et al. 2021) to ensure reproducibility and transparency. All
@@ -36,17 +36,29 @@ Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.
 
 ``` r
-tab <- summary(res)$coefficients
+tab <- data.frame(
+  a = 1:5,
+  b = 6:10,
+  c = letters[1:5]
+)
 write.csv(tab, "tab.csv")
+print(worcs:::cs_fun("tab.csv"))
+```
+
+    ## [1] "c83bed0414877b2359697fbf2af5c89d"
+
+``` r
 tab <- read.csv("tab.csv")
 knitr::kable(tab)
 ```
 
-| X                 |   Estimate | Std..Error |    t.value |    Pr…t.. |
-|:------------------|-----------:|-----------:|-----------:|----------:|
-| (Intercept)       | -3.4366939 |  4.5805532 | -0.7502792 | 0.4536070 |
-| flipper_length_mm |  0.2218655 |  0.0323484 |  6.8586119 | 0.0000000 |
-| body_mass_g       |  0.0006622 |  0.0005672 |  1.1675067 | 0.2438263 |
+|   X |   a |   b | c   |
+|----:|----:|----:|:----|
+|   1 |   1 |   6 | a   |
+|   2 |   2 |   7 | b   |
+|   3 |   3 |   8 | c   |
+|   4 |   4 |   9 | d   |
+|   5 |   5 |  10 | e   |
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0">
