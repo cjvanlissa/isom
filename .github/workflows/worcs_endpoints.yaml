@@ -30,7 +30,10 @@ jobs:
 
       - name: Check endpoints
         run: |
+<<<<<<< HEAD
           cat(getwd())
+=======
+>>>>>>> fe3b2f41896a7e64361f6a81795de480b622881f
           worcs:::cs_fun("manuscript/tab.csv")
           worcs::reproduce(check_endpoints = FALSE)
           worcs:::cs_fun("manuscript/tab.csv")
