@@ -52,6 +52,7 @@ tab <- data.frame(
   c = letters[1:5]
 )
 write.csv(tab, "tab.csv")
+print(worcs:::cs_fun("tab.csv"))
 tab <- read.csv("tab.csv")
 knitr::kable(tab)
 ```
