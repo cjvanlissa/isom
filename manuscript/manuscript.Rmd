@@ -47,7 +47,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 ```{r}
 tab <- summary(res)$coefficients
-write.csv(tab, "tab.csv")
-tab <- read.csv("tab.csv")
+saveRDS(tab, "tab.rd")
+tab <- readRDS("tab.rd")
 knitr::kable(tab)
 ```

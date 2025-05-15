@@ -13,5 +13,7 @@ data:
 checksums:
   df.csv: 948d0bf337a12027c2b02516befca3ca
   manuscript/manuscript.md: 1aced4c5a31df8fdca958008f6d3ce17
+  manuscript/tab.csv: 4979995878d7593bf23af7428398bedf
 endpoints:
 - manuscript/manuscript.md
+- manuscript/tab.csv
