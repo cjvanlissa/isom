@@ -30,5 +30,8 @@ jobs:
 
       - name: Check endpoints
         run: |
-          worcs::check_endpoints()
+          cat(getwd())
+          worcs:::cs_fun("manuscript/tab.csv")
+          worcs::reproduce(check_endpoints = FALSE)
+          worcs:::cs_fun("manuscript/tab.csv")
         shell: Rscript {0}

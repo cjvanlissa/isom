@@ -42,10 +42,10 @@ tab <- data.frame(
   c = letters[1:5]
 )
 write.csv(tab, "tab.csv")
-print(worcs:::cs_fun("tab.csv"))
+cat(worcs:::cs_fun("tab.csv"))
 ```
 
-    ## [1] "c83bed0414877b2359697fbf2af5c89d"
+    ## c83bed0414877b2359697fbf2af5c89d
 
 ``` r
 tab <- read.csv("tab.csv")
