@@ -46,8 +46,12 @@ plot(res, which = 1)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ```{r}
-tab <- summary(res)$coefficients
-saveRDS(tab, "tab.rd")
-tab <- readRDS("tab.rd")
+tab <- data.frame(
+  a = 1:5,
+  b = 6:10,
+  c = letters[1:5]
+)
+write.csv(tab, "tab.csv")
+tab <- read.csv("tab.csv")
 knitr::kable(tab)
 ```
